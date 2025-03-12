@@ -21,7 +21,7 @@ export default function HomePage() {
     if (user) {
       router.push("/dashboard")
     }
-  }, [user, router])
+  }, [user])
 
   // If user is logged in, don't render the homepage content
   if (user) return null

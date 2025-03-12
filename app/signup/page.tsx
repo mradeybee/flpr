@@ -11,8 +11,9 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Home, Hammer, DollarSign, User, Mail, Lock } from "lucide-react"
-import MainLayout from "@/components/main-layout"
+import { MainLayout } from "@/components/templates/MainLayout"
 import { useTranslations } from "@/hooks/use-translations"
+import { useAuth } from "@/contexts/auth-context"
 
 export default function SignupPage() {
   const router = useRouter()
@@ -21,6 +22,13 @@ export default function SignupPage() {
   const [userType, setUserType] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const t = useTranslations()
+  const { user } = useAuth()
+
+  // If user is already logged in, redirect to dashboard
+  if (user) {
+    router.push("/dashboard")
+    return null
+  }
 
   // Check if a plan type was passed in the URL
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client"
 
-import { MainLayout } from "@/components/templates/MainLayout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { Skeleton } from "@/components/ui/skeleton"
 
@@ -12,7 +12,7 @@ export default function PrivacyPage() {
 
   if (isLoading) {
     return (
-      <MainLayout>
+      <DashboardLayout>
         <div className="container py-12 max-w-4xl">
           <Skeleton className="h-10 w-64 mb-8" />
 
@@ -48,12 +48,12 @@ export default function PrivacyPage() {
             </div>
           </div>
         </div>
-      </MainLayout>
+      </DashboardLayout>
     )
   }
 
   return (
-    <MainLayout>
+    <DashboardLayout>
       <div className="container py-12 max-w-4xl">
         <h1 className="text-3xl font-bold mb-8">{t.privacy}</h1>
 
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
           </section>
         </div>
       </div>
-    </MainLayout>
+    </DashboardLayout>
   )
 }
 

@@ -7,7 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Search, MapPin, DollarSign, Percent, Clock, Shield, Star } from "lucide-react"
-import MainLayout from "@/components/main-layout"
+// import MainLayout from "@/components/main-layout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 
 // Mock data for lenders
@@ -108,7 +109,7 @@ export default function LendersPage() {
   const t = useTranslations()
 
   return (
-    <MainLayout>
+    <DashboardLayout>
       <section className="w-full py-6">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col gap-4">
@@ -321,7 +322,7 @@ export default function LendersPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </DashboardLayout>
   )
 }
 

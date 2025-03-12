@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, DollarSign, Ruler, BedDouble, Bath } from "lucide-react"
-import MainLayout from "@/components/main-layout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { useAuth } from "@/contexts/auth-context"
 
@@ -114,7 +114,7 @@ export default function PropertiesPage() {
   if (!user || (user.userType !== "investor" && user.userType !== "homeowner")) return null
 
   return (
-    <MainLayout>
+    <DashboardLayout>
       <section className="w-full py-6">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col gap-4">
@@ -220,7 +220,7 @@ export default function PropertiesPage() {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <p className="text-muted-foreground">
-                  {t.showing} {properties.length} {t.properties}
+                  {t.showing} {properties.length} {t.properties.toLocaleLowerCase()}
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="text-sm">{t.sortBy}</span>
@@ -320,7 +320,7 @@ export default function PropertiesPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </DashboardLayout>
   )
 }
 

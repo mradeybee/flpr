@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { MainLayout } from "@/components/templates/MainLayout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
   if (isLoading) {
     return (
-      <MainLayout>
+      <DashboardLayout>
         <div className="container py-12 max-w-5xl">
           <Skeleton className="h-10 w-64 mb-8" />
 
@@ -138,12 +138,12 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-      </MainLayout>
+      </DashboardLayout>
     )
   }
 
   return (
-    <MainLayout>
+    <DashboardLayout>
       <div className="container py-12 max-w-5xl">
         <h1 className="text-3xl font-bold mb-8">{t.contact}</h1>
 
@@ -242,7 +242,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </DashboardLayout>
   )
 }
 

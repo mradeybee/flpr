@@ -49,6 +49,8 @@ export const es = {
   calendar: "Calendario",
   network: "Red",
   settings: "Configuración",
+  upgrade: "Mejorar Plan",
+  user: "Usuario",
   overview: "Resumen",
   analytics: "Analítica",
   activity: "Actividad",

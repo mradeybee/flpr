@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -13,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, Lock, Github, ChromeIcon as Google, Facebook } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
-import Layout from "@/components/layout"
+import { MainLayout } from "@/components/templates/MainLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { useAuth } from "@/contexts/auth-context"
 
@@ -26,11 +25,11 @@ export default function LoginPage() {
   const t = useTranslations()
   const { login, user } = useAuth()
 
-  // If user is already logged in, redirect to dashboard
-  if (user) {
-    router.push("/dashboard")
-    return null
-  }
+  useEffect(() => {
+    if (user) {
+      router.push("/dashboard")
+    }
+  }, [user, router])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -64,7 +63,7 @@ export default function LoginPage() {
   }
 
   return (
-    <Layout>
+    <MainLayout>
       <div className="flex-1 flex items-center justify-center p-4 md:p-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
@@ -205,7 +204,7 @@ export default function LoginPage() {
           </Tabs>
         </div>
       </div>
-    </Layout>
+    </MainLayout>
   )
 }
 

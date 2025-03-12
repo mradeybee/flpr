@@ -60,7 +60,6 @@ export const en = {
   estRepairCost: "Est. Repair Cost",
   potentialProfit: "Potential Profit",
   viewDetails: "View Details",
-  properties: "properties",
   newest: "Newest",
   priceLowToHigh: "Price: Low to High",
   priceHighToLow: "Price: High to Low",
@@ -324,7 +323,10 @@ export const en = {
   calendar: "Calendar",
   network: "Network",
   settings: "Settings",
+  user: "User",
+  upgrade: "Upgrade",
   overview: "Overview",
+  
   analytics: "Analytics",
   activity: "Activity",
   addProperty: "Add Property",

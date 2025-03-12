@@ -9,7 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Search, MapPin, Hammer, Clock, Star, CheckCircle, Calendar } from "lucide-react"
-import Layout from "@/components/layout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
+
 import { useTranslations } from "@/hooks/use-translations"
 
 // Mock data for contractors
@@ -110,7 +111,7 @@ export default function ContractorsPage() {
   const t = useTranslations()
 
   return (
-    <Layout>
+    <DashboardLayout>
       <section className="w-full py-6">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col gap-4">
@@ -552,7 +553,7 @@ export default function ContractorsPage() {
           </div>
         </div>
       </footer>
-    </Layout>
+    </DashboardLayout>
   )
 }
 
