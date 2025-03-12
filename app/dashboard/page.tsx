@@ -11,6 +11,7 @@ import { Home, DollarSign, Hammer, BarChart3, PlusCircle, Clock, CheckCircle2 } 
 import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { useAuth } from "@/contexts/auth-context"
+import Activities from "@/components/organisms/activities"
 
 // Mock data for different user types
 const investorProperties = [
@@ -497,6 +498,14 @@ export default function DashboardPage() {
               </Card>
             </>
           )}
+        </TabsContent>
+
+        <TabsContent value="activity" className="space-y-6">
+        
+
+       <Activities />
+       
+          
         </TabsContent>
       </Tabs>
     </DashboardLayout>

@@ -655,5 +655,24 @@ export const es = {
   howDoIListProperty: "¿Cómo puedo listar una propiedad?",
   listPropertyAnswer:
     "Después de registrarse como propietario, puede listar su propiedad yendo a su panel de control y haciendo clic en 'Añadir Propiedad'.",
+
+  // Activities
+  activities: "Actividades",
+  activitiesDescription: "Sigue tus actividades recientes e interacciones en la plataforma.",
+  filters: "Filtros",
+  searchActivities: "Buscar actividades...",
+  selectDateRange: "Seleccionar rango de fechas",
+  allTime: "Todo el tiempo",
+  today: "Hoy",
+  pastWeek: "Última semana",
+  pastMonth: "Último mes",
+  all: "Todos",
+  messages: "Mensajes",
+  documents: "Documentos",
+  investments: "Inversiones",
+  noActivitiesFound: "No se encontraron actividades para los filtros seleccionados.",
+  clearFilters: "Limpiar filtros",
+  loadMore: "Cargar más",
+  property: "Propiedad",
 }
 

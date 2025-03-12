@@ -38,19 +38,20 @@ export function Header() {
               // Authenticated navigation
               <>
                 {user.userType === "investor" && (
-                  <Link href="/properties" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {t.properties}
-                  </Link>
-                )}
-                {user.userType === "investor" && (
-                  <Link href="/lenders" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {t.lenders}
-                  </Link>
-                )}
-                {user.userType === "investor" && (
-                  <Link href="/contractors" className="text-muted-foreground hover:text-foreground transition-colors">
-                    {t.contractors}
-                  </Link>
+                  <>
+                    <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
+                      {t.dashboard}
+                    </Link>
+                    <Link href="/properties" className="text-muted-foreground hover:text-foreground transition-colors">
+                      {t.properties}
+                    </Link>
+                    <Link href="/lenders" className="text-muted-foreground hover:text-foreground transition-colors">
+                      {t.lenders}
+                    </Link>
+                    <Link href="/contractors" className="text-muted-foreground hover:text-foreground transition-colors">
+                      {t.contractors}
+                    </Link>
+                  </>
                 )}
               </>
             ) : (
