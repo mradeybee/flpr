@@ -48,35 +48,35 @@ export function ActivityContextMenu({ activityId, activityType }: ActivityContex
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
           <MoreVertical className="h-4 w-4" />
-          <span className="sr-only">{t.openMenu || "Open menu"}</span>
+          <span className="sr-only">{t.openMenu}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={handleView}>
           <Eye className="mr-2 h-4 w-4" />
-          <span>{t.viewDetails || "View details"}</span>
+          <span>{t.viewDetails}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleCopy}>
           <Copy className="mr-2 h-4 w-4" />
-          <span>{t.copyLink || "Copy link"}</span>
+          <span>{t.copyLink}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleShare}>
           <Share className="mr-2 h-4 w-4" />
-          <span>{t.share || "Share"}</span>
+          <span>{t.share}</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleArchive}>
           <Archive className="mr-2 h-4 w-4" />
-          <span>{t.archive || "Archive"}</span>
+          <span>{t.archive}</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleDelete} className="text-destructive">
           <Trash className="mr-2 h-4 w-4" />
-          <span>{t.delete || "Delete"}</span>
+          <span>{t.delete}</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleReport} className="text-destructive">
           <AlertCircle className="mr-2 h-4 w-4" />
-          <span>{t.report || "Report"}</span>
+          <span>{t.report}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

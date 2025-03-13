@@ -22,25 +22,25 @@ export function ActivityFilters({ dateRange, setDateRange }: ActivityFiltersProp
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <Calendar className="h-4 w-4 text-flipr-orange" />
-          <h3 className="font-medium text-sm">{t.dateRange || "Date Range"}</h3>
+          <h3 className="font-medium text-sm">{t.dateRange}</h3>
         </div>
 
         <RadioGroup value={dateRange} onValueChange={setDateRange} className="space-y-2">
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="all" id="all" />
-            <Label htmlFor="all">{t.allTime || "All time"}</Label>
+            <Label htmlFor="all">{t.allTime}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="today" id="today" />
-            <Label htmlFor="today">{t.today || "Today"}</Label>
+            <Label htmlFor="today">{t.today}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="week" id="week" />
-            <Label htmlFor="week">{t.pastWeek || "Past week"}</Label>
+            <Label htmlFor="week">{t.pastWeek}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="month" id="month" />
-            <Label htmlFor="month">{t.pastMonth || "Past month"}</Label>
+            <Label htmlFor="month">{t.pastMonth}</Label>
           </div>
         </RadioGroup>
       </div>
@@ -49,32 +49,32 @@ export function ActivityFilters({ dateRange, setDateRange }: ActivityFiltersProp
 
       {/* Activity Type Filter */}
       <div className="space-y-3">
-        <h3 className="font-medium text-sm">{t.activityTypes || "Activity Types"}</h3>
+        <h3 className="font-medium text-sm">{t.activityTypes}</h3>
 
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <Checkbox id="type-property" defaultChecked />
-            <Label htmlFor="type-property">{t.properties || "Properties"}</Label>
+            <Label htmlFor="type-property">{t.properties}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="type-message" defaultChecked />
-            <Label htmlFor="type-message">{t.messages || "Messages"}</Label>
+            <Label htmlFor="type-message">{t.messages}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="type-document" defaultChecked />
-            <Label htmlFor="type-document">{t.documents || "Documents"}</Label>
+            <Label htmlFor="type-document">{t.documents}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="type-investment" defaultChecked />
-            <Label htmlFor="type-investment">{t.investments || "Investments"}</Label>
+            <Label htmlFor="type-investment">{t.investments}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="type-contractor" defaultChecked />
-            <Label htmlFor="type-contractor">{t.contractors || "Contractors"}</Label>
+            <Label htmlFor="type-contractor">{t.contractors}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="type-lender" defaultChecked />
-            <Label htmlFor="type-lender">{t.lenders || "Lenders"}</Label>
+            <Label htmlFor="type-lender">{t.lenders}</Label>
           </div>
         </div>
       </div>
@@ -83,27 +83,27 @@ export function ActivityFilters({ dateRange, setDateRange }: ActivityFiltersProp
 
       {/* Status Filter */}
       <div className="space-y-3">
-        <h3 className="font-medium text-sm">{t.status || "Status"}</h3>
+        <h3 className="font-medium text-sm">{t.status}</h3>
 
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <Checkbox id="status-completed" defaultChecked />
-            <Label htmlFor="status-completed">{t.completed || "Completed"}</Label>
+            <Label htmlFor="status-completed">{t.completed}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="status-pending" defaultChecked />
-            <Label htmlFor="status-pending">{t.pending || "Pending"}</Label>
+            <Label htmlFor="status-pending">{t.pending}</Label>
           </div>
           <div className="flex items-center space-x-2">
             <Checkbox id="status-failed" defaultChecked />
-            <Label htmlFor="status-failed">{t.failed || "Failed"}</Label>
+            <Label htmlFor="status-failed">{t.failed}</Label>
           </div>
         </div>
       </div>
 
       <Button variant="outline" className="w-full" size="sm">
         <RotateCcw className="mr-2 h-3 w-3" />
-        {t.resetFilters || "Reset filters"}
+        {t.resetFilters}
       </Button>
     </div>
   )

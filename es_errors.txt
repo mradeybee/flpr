@@ -1,0 +1,12 @@
+234:translations/es.ts(96,3): error TS1117: An object literal cannot have multiple properties with the same name.
+235:translations/es.ts(276,3): error TS1117: An object literal cannot have multiple properties with the same name.
+236:translations/es.ts(334,3): error TS1117: An object literal cannot have multiple properties with the same name.
+237:translations/es.ts(358,3): error TS1117: An object literal cannot have multiple properties with the same name.
+238:translations/es.ts(379,3): error TS1117: An object literal cannot have multiple properties with the same name.
+239:translations/es.ts(429,3): error TS1117: An object literal cannot have multiple properties with the same name.
+240:translations/es.ts(466,3): error TS1117: An object literal cannot have multiple properties with the same name.
+241:translations/es.ts(637,3): error TS1117: An object literal cannot have multiple properties with the same name.
+242:translations/es.ts(638,3): error TS1117: An object literal cannot have multiple properties with the same name.
+243:translations/es.ts(640,3): error TS1117: An object literal cannot have multiple properties with the same name.
+244:translations/es.ts(644,3): error TS1117: An object literal cannot have multiple properties with the same name.
+245:translations/es.ts(662,3): error TS1117: An object literal cannot have multiple properties with the same name.

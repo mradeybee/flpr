@@ -8,6 +8,9 @@ export function useTranslations() {
   const { language } = useLanguage()
 
   // Return the appropriate translation object based on the selected language
-  return language === "en" ? en : es
+  return {
+    ...language === "en" ? en : es,
+    language
+  }
 }
 

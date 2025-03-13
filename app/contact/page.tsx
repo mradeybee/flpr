@@ -30,8 +30,8 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSubmitting(false)
       toast({
-        title: t.messageSent,
-        description: t.messageReceived,
+        title: "Message sent",
+        description: "Message received",
       })
       // Reset form
       const form = e.target as HTMLFormElement
@@ -167,7 +167,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">{t.subject}</Label>
+                  <Label htmlFor="subject">Subject</Label>
                   <Input id="subject" required />
                 </div>
 

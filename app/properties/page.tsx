@@ -131,15 +131,15 @@ export default function PropertiesPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Location</label>
+                  <label className="text-sm font-medium">{t.location}</label>
                   <div className="relative">
                     <MapPin className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input placeholder="City, State, or ZIP" className="pl-8" />
+                    <Input placeholder={t.cityStateOrZIP} className="pl-8" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Price Range</label>
+                  <label className="text-sm font-medium">{t.priceRange}</label>
                   <div className="pt-2">
                     <Slider defaultValue={[100000, 500000]} min={50000} max={1000000} step={10000} />
                     <div className="flex items-center justify-between mt-2">
@@ -150,29 +150,29 @@ export default function PropertiesPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Property Type</label>
+                  <label className="text-sm font-medium">{t.propertyType}</label>
                   <Select defaultValue="all">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select property type" />
+                      <SelectValue placeholder={t.selectPropertyType} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Properties</SelectItem>
-                      <SelectItem value="single">Single Family</SelectItem>
-                      <SelectItem value="multi">Multi-Family</SelectItem>
-                      <SelectItem value="condo">Condo/Townhouse</SelectItem>
+                      <SelectItem value="all">{t.allProperties}</SelectItem>
+                      <SelectItem value="single">{t.singleFamily}</SelectItem>
+                      <SelectItem value="multi">{t.multiFamily}</SelectItem>
+                      <SelectItem value="condo">{t.condoTownhouse}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Beds</label>
+                    <label className="text-sm font-medium">{t.beds}</label>
                     <Select defaultValue="any">
                       <SelectTrigger>
-                        <SelectValue placeholder="Any" />
+                        <SelectValue placeholder={t.any} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="any">Any</SelectItem>
+                        <SelectItem value="any">{t.any}</SelectItem>
                         <SelectItem value="1">1+</SelectItem>
                         <SelectItem value="2">2+</SelectItem>
                         <SelectItem value="3">3+</SelectItem>
@@ -181,13 +181,13 @@ export default function PropertiesPage() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Baths</label>
+                    <label className="text-sm font-medium">{t.baths}</label>
                     <Select defaultValue="any">
                       <SelectTrigger>
-                        <SelectValue placeholder="Any" />
+                        <SelectValue placeholder={t.any} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="any">Any</SelectItem>
+                        <SelectItem value="any">{t.any}</SelectItem>
                         <SelectItem value="1">1+</SelectItem>
                         <SelectItem value="2">2+</SelectItem>
                         <SelectItem value="3">3+</SelectItem>
@@ -197,13 +197,13 @@ export default function PropertiesPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Potential ROI</label>
+                  <label className="text-sm font-medium">{t.potentialROI}</label>
                   <Select defaultValue="any">
                     <SelectTrigger>
-                      <SelectValue placeholder="Any" />
+                      <SelectValue placeholder={t.any} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="any">Any</SelectItem>
+                      <SelectItem value="any">{t.any}</SelectItem>
                       <SelectItem value="15">15%+</SelectItem>
                       <SelectItem value="20">20%+</SelectItem>
                       <SelectItem value="25">25%+</SelectItem>
@@ -212,7 +212,7 @@ export default function PropertiesPage() {
                   </Select>
                 </div>
 
-                <Button className="w-full">Apply Filters</Button>
+                <Button className="w-full">{t.applyFilters}</Button>
               </CardContent>
             </Card>
 

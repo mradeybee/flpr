@@ -15,11 +15,11 @@ export function BillingSettings() {
     price: "$29",
     interval: "month",
     features: [
-      "Browse all properties",
-      "Advanced filtering",
-      "Investment analytics",
-      "AI project analysis",
-      "Connect with contractors",
+      "browseAllProperties",
+      "advancedFiltering",
+      "investmentAnalytics",
+      "aiAnalysis",
+      "connectWithContractors",
     ],
     nextBillingDate: "April 15, 2025",
   }
@@ -40,10 +40,10 @@ export function BillingSettings() {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-lg font-medium">{t.billing || "Billing"}</h3>
-        <p className="text-sm text-muted-foreground">
-          {t.billingPreferences || "Manage your subscription and payment methods."}
-        </p>
+        <h3 className="text-lg font-medium">{t.billing}</h3>
+        <div className="text-sm text-muted-foreground">
+          {t.billingPreferences}
+        </div>
       </div>
 
       <Separator />
@@ -52,17 +52,17 @@ export function BillingSettings() {
         <div>
           <h4 className="text-md font-medium mb-4 flex items-center">
             <DollarSign className="mr-2 h-4 w-4" />
-            {t.currentPlan || "Current Plan"}
+            {t.currentPlan}
           </h4>
 
           <Card>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
-                <CardTitle>{t[currentPlan.name.toLowerCase() + "Plan"] || currentPlan.name}</CardTitle>
-                <Badge className="bg-flipr-orange">{t.active || "Active"}</Badge>
+                <CardTitle>{t[currentPlan.name.toLowerCase() + "Plan"]}</CardTitle>
+                <Badge className="bg-flipr-orange">{t.active}</Badge>
               </div>
               <CardDescription>
-                {currentPlan.price}/{t[currentPlan.interval] || currentPlan.interval}
+                {currentPlan.price}/{t[currentPlan.interval]}
               </CardDescription>
             </CardHeader>
             <CardContent className="pb-3">
@@ -70,20 +70,20 @@ export function BillingSettings() {
                 {currentPlan.features.map((feature, index) => (
                   <div key={index} className="flex items-center">
                     <Check className="mr-2 h-4 w-4 text-flipr-orange" />
-                    <span className="text-sm">{t[feature.toLowerCase().replace(/\s+/g, "")] || feature}</span>
+                    <span className="text-sm">{t[feature]}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-4 flex items-center text-sm text-muted-foreground">
                 <Calendar className="mr-2 h-4 w-4" />
                 <span>
-                  {t.nextBillingOn || "Next billing on"}: {currentPlan.nextBillingDate}
+                  {t.nextBillingOn}: {currentPlan.nextBillingDate}
                 </span>
               </div>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full">
-                {t.changePlan || "Change Plan"}
+                {t.changePlan}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </CardFooter>
@@ -95,7 +95,7 @@ export function BillingSettings() {
         <div>
           <h4 className="text-md font-medium mb-4 flex items-center">
             <CreditCard className="mr-2 h-4 w-4" />
-            {t.paymentMethods || "Payment Methods"}
+            {t.paymentMethods}
           </h4>
 
           <div className="space-y-4">
@@ -108,21 +108,21 @@ export function BillingSettings() {
                         <CreditCard className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-medium capitalize">
+                        <div className="font-medium capitalize">
                           {method.brand} •••• {method.last4}
                           {method.isDefault && (
                             <Badge variant="outline" className="ml-2">
-                              {t.default || "Default"}
+                              {t.default}
                             </Badge>
                           )}
-                        </p>
+                        </div>
                         <p className="text-sm text-muted-foreground">
-                          {t.expires || "Expires"} {method.expMonth}/{method.expYear}
+                          {t.expires} {method.expMonth}/{method.expYear}
                         </p>
                       </div>
                     </div>
                     <Button variant="ghost" size="sm">
-                      {t.edit || "Edit"}
+                      {t.edit}
                     </Button>
                   </div>
                 </CardContent>
@@ -131,7 +131,7 @@ export function BillingSettings() {
 
             <Button variant="outline" className="w-full">
               <Plus className="mr-2 h-4 w-4" />
-              {t.addPaymentMethod || "Add Payment Method"}
+              {t.addPaymentMethod}
             </Button>
           </div>
         </div>
@@ -139,11 +139,11 @@ export function BillingSettings() {
         <Separator />
 
         <div>
-          <h4 className="text-md font-medium mb-4">{t.billingHistory || "Billing History"}</h4>
+          <h4 className="text-md font-medium mb-4">{t.billingHistory}</h4>
           <Card>
             <CardContent className="p-4">
               <div className="text-center py-4 text-muted-foreground">
-                {t.noBillingHistory || "No billing history available yet."}
+                {t.noBillingHistory}
               </div>
             </CardContent>
           </Card>

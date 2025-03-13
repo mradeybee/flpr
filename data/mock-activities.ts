@@ -22,7 +22,7 @@ const sortByTimestamp = (a: Activity, b: Activity) => {
 export const mockActivities: Activity[] = [
   {
     id: "act1",
-    type: "property",
+    type: "property" as const,
     action: "viewed",
     title: "Property Viewed",
     description: "You viewed a property in Austin, TX",
@@ -35,7 +35,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act2",
-    type: "property",
+    type: "property" as const,
     action: "favorited",
     title: "Property Favorited",
     description: "You added a property to your favorites",
@@ -48,12 +48,12 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act3",
-    type: "message",
+    type: "message" as const,
     action: "sent",
     title: "Message Sent",
     description: "You sent a message to John Contractor",
     timestamp: getRandomTimestamp(),
-    status: "completed",
+    status: "completed" as const,
     user: {
       name: "John Contractor",
       avatar: "/placeholder.svg?height=40&width=40",
@@ -61,12 +61,12 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act4",
-    type: "document",
+    type: "document" as const,
     action: "uploaded",
     title: "Document Uploaded",
     description: "You uploaded a property inspection report",
     timestamp: getRandomTimestamp(),
-    status: "completed",
+    status: "completed" as const,
     entity: {
       id: "doc1",
       name: "Property Inspection Report.pdf",
@@ -74,12 +74,12 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act5",
-    type: "investment",
+    type: "investment" as const,
     action: "created",
     title: "Investment Created",
     description: "You created a new investment opportunity",
     timestamp: getRandomTimestamp(),
-    status: "pending",
+    status: "pending" as const,
     entity: {
       id: "inv1",
       name: "Pine Street Renovation Project",
@@ -87,24 +87,24 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act6",
-    type: "contractor",
+    type: "contractor" as const,
     action: "contacted",
     title: "Contractor Contacted",
     description: "You requested a quote from a contractor",
     timestamp: getRandomTimestamp(),
-    status: "pending",
+    status: "pending" as const,
     user: {
       name: "ABC Renovations",
     },
   },
   {
     id: "act7",
-    type: "lender",
+    type: "lender" as const,
     action: "applied",
     title: "Loan Application",
     description: "You applied for financing with First Capital Bank",
     timestamp: getRandomTimestamp(),
-    status: "pending",
+    status: "pending" as const,
     entity: {
       id: "lender1",
       name: "First Capital Bank",
@@ -112,7 +112,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act8",
-    type: "document",
+    type: "document" as const,
     action: "downloaded",
     title: "Document Downloaded",
     description: "You downloaded a loan agreement document",
@@ -124,12 +124,12 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act9",
-    type: "property",
+    type: "property" as const,
     action: "analyzed",
     title: "Property Analysis",
     description: "You ran an investment analysis on a property",
     timestamp: getRandomTimestamp(),
-    status: "completed",
+    status: "completed" as const,
     entity: {
       id: "prop3",
       name: "789 Pine Ln, Austin, TX",
@@ -138,7 +138,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act10",
-    type: "message",
+    type: "message" as const,
     action: "received",
     title: "Message Received",
     description: "You received a message from Sarah Lender",
@@ -150,7 +150,7 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act11",
-    type: "investment",
+    type: "investment" as const,
     action: "updated",
     title: "Investment Updated",
     description: "You updated the budget for your investment project",
@@ -162,12 +162,12 @@ export const mockActivities: Activity[] = [
   },
   {
     id: "act12",
-    type: "document",
+    type: "document" as const,
     action: "signed",
     title: "Document Signed",
     description: "You signed a purchase agreement",
     timestamp: getRandomTimestamp(),
-    status: "completed",
+    status: "completed" as const,
     entity: {
       id: "doc3",
       name: "Purchase Agreement.pdf",

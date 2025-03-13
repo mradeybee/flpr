@@ -101,11 +101,11 @@ export function ActivityFeed({ activities }: ActivityFeedProps) {
   const getStatusText = (status?: Activity["status"]) => {
     switch (status) {
       case "completed":
-        return t.completed || "Completed"
+        return t.completed
       case "pending":
-        return t.pending || "Pending"
+        return t.pending
       case "failed":
-        return t.failed || "Failed"
+        return t.failed
       default:
         return ""
     }
@@ -185,7 +185,7 @@ export function ActivityFeed({ activities }: ActivityFeedProps) {
                   <div>
                     <p className="font-medium">{activity.entity.name}</p>
                     <Button variant="link" className="h-auto p-0 text-sm">
-                      {t.viewDetails || "View details"}
+                      {t.viewDetails}
                     </Button>
                   </div>
                 </div>

@@ -138,13 +138,13 @@ export default function DashboardPage() {
     <DashboardLayout>
       <div className="mb-6">
         <h1 className="text-2xl font-bold">
-          Welcome, {user.firstName} {user.lastName}
+          {t.welcome}, {user.firstName} {user.lastName}
         </h1>
         <p className="text-muted-foreground">
-          {user.userType === "homeowner" && "Manage your property listings and inquiries"}
-          {user.userType === "investor" && "Track your investment properties and projects"}
-          {user.userType === "contractor" && "Manage your renovation requests and projects"}
-          {user.userType === "lender" && "Review funding requests and manage loans"}
+          {user.userType === "homeowner" && t.manageHomeowner}
+          {user.userType === "investor" && t.trackInvestments}
+          {user.userType === "contractor" && t.manageRenovations}
+          {user.userType === "lender" && t.reviewFunding}
         </p>
       </div>
 
@@ -159,7 +159,7 @@ export default function DashboardPage() {
             {user.userType === "homeowner" && (
               <Button>
                 <PlusCircle className="mr-2 h-4 w-4" />
-                Add Property
+                {t.addProperty}
               </Button>
             )}
             {user.userType === "investor" && (
@@ -178,49 +178,49 @@ export default function DashboardPage() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Listed Properties</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.listedProperties}</CardTitle>
                     <Home className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">{homeownerProperties.length}</div>
-                    <p className="text-xs text-muted-foreground">+1 from last month</p>
+                    <p className="text-xs text-muted-foreground">+1 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Total Views</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.totalViews}</CardTitle>
                     <BarChart3 className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">165</div>
-                    <p className="text-xs text-muted-foreground">+22% from last month</p>
+                    <p className="text-xs text-muted-foreground">+22% {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Inquiries</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.inquiries}</CardTitle>
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">11</div>
-                    <p className="text-xs text-muted-foreground">+3 from last month</p>
+                    <p className="text-xs text-muted-foreground">+3 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Offers</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.offers}</CardTitle>
                     <Hammer className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">2</div>
-                    <p className="text-xs text-muted-foreground">+1 from last month</p>
+                    <p className="text-xs text-muted-foreground">+1 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Your Properties</CardTitle>
+                  <CardTitle>{t.yourProperties}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
@@ -234,8 +234,8 @@ export default function DashboardPage() {
                           <span className="text-sm text-muted-foreground">${property.price.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between text-sm text-muted-foreground">
-                          <div>Views: {property.views}</div>
-                          <div>Inquiries: {property.inquiries}</div>
+                          <div>{t.views}: {property.views}</div>
+                          <div>{t.inquiries}: {property.inquiries}</div>
                         </div>
                       </div>
                     ))}
@@ -243,7 +243,7 @@ export default function DashboardPage() {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" className="w-full">
-                    View All Properties
+                    {t.viewAllProperties}
                   </Button>
                 </CardFooter>
               </Card>
@@ -261,7 +261,7 @@ export default function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">3</div>
-                    <p className="text-xs text-muted-foreground">+1 from last month</p>
+                    <p className="text-xs text-muted-foreground">+1 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -271,7 +271,7 @@ export default function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">$825,000</div>
-                    <p className="text-xs text-muted-foreground">+$225,000 from last month</p>
+                    <p className="text-xs text-muted-foreground">+$225,000 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -281,7 +281,7 @@ export default function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">$215,000</div>
-                    <p className="text-xs text-muted-foreground">+$65,000 from last month</p>
+                    <p className="text-xs text-muted-foreground">+$65,000 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -291,14 +291,14 @@ export default function DashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">7</div>
-                    <p className="text-xs text-muted-foreground">+2 from last month</p>
+                    <p className="text-xs text-muted-foreground">+2 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card className="col-span-4">
                 <CardHeader>
-                  <CardTitle>Active Projects</CardTitle>
+                  <CardTitle>{t.activeProjects}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
@@ -309,7 +309,7 @@ export default function DashboardPage() {
                             <h3 className="font-medium">{property.title}</h3>
                             <Badge>{property.status}</Badge>
                           </div>
-                          <span className="text-sm text-muted-foreground">{property.progress}% Complete</span>
+                          <span className="text-sm text-muted-foreground">{property.progress}% {t.complete}</span>
                         </div>
                         <Progress value={property.progress} className="h-2" />
                         <div className="flex justify-between text-sm text-muted-foreground">
@@ -326,7 +326,7 @@ export default function DashboardPage() {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" className="w-full">
-                    View All Projects
+                    {t.viewAllProjects}
                   </Button>
                 </CardFooter>
               </Card>
@@ -339,49 +339,49 @@ export default function DashboardPage() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Active Projects</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.activeProjects}</CardTitle>
                     <Hammer className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">2</div>
-                    <p className="text-xs text-muted-foreground">+1 from last month</p>
+                    <p className="text-xs text-muted-foreground">+1 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Pending Requests</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.pendingRequests}</CardTitle>
                     <Clock className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">3</div>
-                    <p className="text-xs text-muted-foreground">+2 from last month</p>
+                    <p className="text-xs text-muted-foreground">+2 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Completed Projects</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.completedProjects}</CardTitle>
                     <CheckCircle2 className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">24</div>
-                    <p className="text-xs text-muted-foreground">+3 from last month</p>
+                    <p className="text-xs text-muted-foreground">+3 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Revenue</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.revenue}</CardTitle>
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">$125,000</div>
-                    <p className="text-xs text-muted-foreground">+$28,000 from last month</p>
+                    <p className="text-xs text-muted-foreground">+$28,000 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Renovation Requests</CardTitle>
+                  <CardTitle>{t.renovationRequests}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
@@ -397,11 +397,11 @@ export default function DashboardPage() {
                           <span className="text-sm text-muted-foreground">${request.budget.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between text-sm text-muted-foreground">
-                          <div>Type: {request.type}</div>
-                          <div>Deadline: {request.deadline}</div>
+                          <div>{t.type}: {request.type}</div>
+                          <div>{t.deadline}: {request.deadline}</div>
                         </div>
                         <div className="flex justify-between text-sm text-muted-foreground">
-                          <div>Investor: {request.investor}</div>
+                          <div>{t.investor}: {request.investor}</div>
                         </div>
                       </div>
                     ))}
@@ -409,7 +409,7 @@ export default function DashboardPage() {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" className="w-full">
-                    View All Requests
+                    {t.viewAllRequests}
                   </Button>
                 </CardFooter>
               </Card>
@@ -422,49 +422,49 @@ export default function DashboardPage() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Active Loans</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.activeLoans}</CardTitle>
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">5</div>
-                    <p className="text-xs text-muted-foreground">+1 from last month</p>
+                    <p className="text-xs text-muted-foreground">+1 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Pending Requests</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.pendingRequests}</CardTitle>
                     <Clock className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">4</div>
-                    <p className="text-xs text-muted-foreground">+2 from last month</p>
+                    <p className="text-xs text-muted-foreground">+2 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Total Funded</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.totalFunded}</CardTitle>
                     <BarChart3 className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">$1.2M</div>
-                    <p className="text-xs text-muted-foreground">+$280K from last month</p>
+                    <p className="text-xs text-muted-foreground">+$280K {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">Interest Income</CardTitle>
+                    <CardTitle className="text-sm font-medium">{t.interestIncome}</CardTitle>
                     <DollarSign className="h-4 w-4 text-muted-foreground" />
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold">$95,000</div>
-                    <p className="text-xs text-muted-foreground">+$12,000 from last month</p>
+                    <p className="text-xs text-muted-foreground">+$12,000 {t.fromLastMonth}</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Funding Requests</CardTitle>
+                  <CardTitle>{t.fundingRequests}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
@@ -480,11 +480,11 @@ export default function DashboardPage() {
                           <span className="text-sm text-muted-foreground">${request.amount.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between text-sm text-muted-foreground">
-                          <div>Term: {request.term}</div>
-                          <div>LTV: {request.ltv}</div>
+                          <div>{t.term}: {request.term}</div>
+                          <div>{t.ltv}: {request.ltv}</div>
                         </div>
                         <div className="flex justify-between text-sm text-muted-foreground">
-                          <div>Investor: {request.investor}</div>
+                          <div>{t.investor}: {request.investor}</div>
                         </div>
                       </div>
                     ))}
@@ -492,7 +492,7 @@ export default function DashboardPage() {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" className="w-full">
-                    View All Requests
+                    {t.viewAllRequests}
                   </Button>
                 </CardFooter>
               </Card>
@@ -501,11 +501,7 @@ export default function DashboardPage() {
         </TabsContent>
 
         <TabsContent value="activity" className="space-y-6">
-        
-
-       <Activities />
-       
-          
+          <Activities />
         </TabsContent>
       </Tabs>
     </DashboardLayout>

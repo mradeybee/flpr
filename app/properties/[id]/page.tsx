@@ -30,8 +30,9 @@ import {
   Download,
   Printer,
   Brain,
+  CheckCircle,
 } from "lucide-react"
-import MainLayout from "@/components/main-layout"
+import { DashboardLayout } from "@/components/templates/DashboardLayout"
 import { useTranslations } from "@/hooks/use-translations"
 import { useAuth } from "@/contexts/auth-context"
 
@@ -195,7 +196,7 @@ export default function PropertyDetailsPage() {
   if (!user || (user.userType !== "investor" && user.userType !== "homeowner")) return null
 
   return (
-    <MainLayout>
+    <DashboardLayout>
       <div className="container px-4 md:px-6 py-6 md:py-8">
         <div className="mb-6">
           <Link
@@ -389,7 +390,7 @@ export default function PropertyDetailsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {Object.entries(propertyData.features).map(([category, value]) => (
                         <div key={category}>
-                          <h4 className="font-medium mb-2 capitalize">{t[category] || category}</h4>
+                          <h4 className="font-medium mb-2 capitalize">{category}</h4>
                           {Array.isArray(value) ? (
                             <ul className="space-y-1">
                               {value.map((item, index) => (
@@ -409,16 +410,16 @@ export default function PropertyDetailsPage() {
 
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.propertyHistory}</CardTitle>
+                    <CardTitle>Property History</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b">
-                          <th className="text-left py-2 font-medium">{t.date}</th>
-                          <th className="text-left py-2 font-medium">{t.event}</th>
-                          <th className="text-left py-2 font-medium">{t.price}</th>
-                          <th className="text-left py-2 font-medium">{t.source}</th>
+                          <th className="text-left py-2 font-medium">Date</th>
+                          <th className="text-left py-2 font-medium">Event</th>
+                          <th className="text-left py-2 font-medium">Price</th>
+                          <th className="text-left py-2 font-medium">Source</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -448,10 +449,10 @@ export default function PropertyDetailsPage() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b">
-                          <th className="text-left py-2 font-medium">{t.category}</th>
-                          <th className="text-left py-2 font-medium">{t.priority}</th>
-                          <th className="text-left py-2 font-medium">{t.estimatedCost}</th>
-                          <th className="text-left py-2 font-medium">{t.notes}</th>
+                          <th className="text-left py-2 font-medium">Category</th>
+                          <th className="text-left py-2 font-medium">Priority</th>
+                          <th className="text-left py-2 font-medium">Estimated Cost</th>
+                          <th className="text-left py-2 font-medium">Notes</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -721,7 +722,7 @@ export default function PropertyDetailsPage() {
                                       </div>
                                       <div>
                                         <p className="font-medium">{t.finalInspections}</p>
-                                        <p className="text-muted-foreground">1 {t.weeks.slice(0, -1)}</p>
+                                        <p className="text-muted-foreground">1 {t.week}</p>
                                       </div>
                                     </li>
                                   </ul>
@@ -732,27 +733,15 @@ export default function PropertyDetailsPage() {
                                   <ul className="space-y-2 text-sm">
                                     <li className="flex items-start gap-2">
                                       <div className="rounded-full bg-green-100 p-1 mt-0.5">
-                                        <Check className="h-3 w-3 text-green-600" />
+                                        <CheckCircle className="h-4 w-4 text-green-600" />
                                       </div>
-                                      <span>{t.considerUpgrading}</span>
+                                      <p>{t.estimatedTimeline}: 12 {t.weeks}</p>
                                     </li>
                                     <li className="flex items-start gap-2">
                                       <div className="rounded-full bg-green-100 p-1 mt-0.5">
-                                        <Check className="h-3 w-3 text-green-600" />
+                                        <CheckCircle className="h-4 w-4 text-green-600" />
                                       </div>
-                                      <span>{t.prioritizeKitchen}</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                      <div className="rounded-full bg-green-100 p-1 mt-0.5">
-                                        <Check className="h-3 w-3 text-green-600" />
-                                      </div>
-                                      <span>{t.scheduleWork}</span>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                      <div className="rounded-full bg-green-100 p-1 mt-0.5">
-                                        <Check className="h-3 w-3 text-green-600" />
-                                      </div>
-                                      <span>{t.considerOpenFloor}</span>
+                                      <p>{t.basedOnMarketRates}</p>
                                     </li>
                                   </ul>
                                 </div>
@@ -1020,7 +1009,7 @@ export default function PropertyDetailsPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </DashboardLayout>
   )
 }
 
